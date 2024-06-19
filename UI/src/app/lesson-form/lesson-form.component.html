@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Create New lesson</h1>
+    <form (ngSubmit)="onSubmit()" #lessonForm="ngForm">
+        <div class="form-group">
+            <label for="lessonId">Lesson Id</label>
+            <input type="text" id="lessonId" class="form-control" required [(ngModel)]="lesson.lessonId" name="lessonId" #lessonId="ngModel">
+          </div>
+      <div class="form-group">
+        <label for="lessonName">Lesson Name</label>
+        <input type="text" id="lessonName" class="form-control" required [(ngModel)]="lesson.lessonName" name="lessonName" #lessonName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="class">Class</label>
+        <input type="number" id="class" class="form-control" required [(ngModel)]="lesson.class" name="class" #class="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="teacherName">Teacher Name</label>
+        <input type="text" id="teacherName" class="form-control" required [(ngModel)]="lesson.teacherName" name="teacherName" #teacherName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="teacherSurname">Teacher Surname</label>
+        <input type="text" id="teacherSurname" class="form-control" required [(ngModel)]="lesson.teacherSurname" name="teacherSurname" #teacherSurname="ngModel">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!lessonForm.form.valid">Create</button>
+    </form>
+  </div>
+  

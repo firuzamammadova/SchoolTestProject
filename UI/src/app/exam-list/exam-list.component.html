@@ -1,0 +1,69 @@
+<div class="container">
+  <h1>Exam Results</h1>
+  <a routerLink="/" class="btn btn-primary">Go Back</a>
+  <div class="filter">
+  <label for="lessonId">LessonId</label>
+  <input
+    type="text"
+    id="lessonId"
+    class="form-control"
+    required
+    [(ngModel)]="filter.lessonId"
+    name="lessonId"
+    #lessonId="ngModel"
+  />
+  <label for="studentId">StudentId</label>
+  <input
+    type="number"
+    id="studentId"
+    class="form-control"
+    required
+    [(ngModel)]="filter.studentId"
+    name="studentId"
+    #studentId="ngModel"
+  />
+  <button (click)="filterExams()" class="btn btn-primary " >Filter</button>
+
+</div>
+  <br /><br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Lesson Id</th>
+        <th>Student Id</th>
+        <th>Date</th>
+        <th>Mark</th>
+        <th>Class</th>
+        <th>Lesson Name</th>
+        <th>Student Name</th>
+        <th>Student Surname</th>
+        <th>Teacher Name</th>
+        <th>Teacher Surname</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of exams">
+        <td>{{ exam.id }}</td>
+        <td>{{ exam.lessonId }}</td>
+        <td>{{ exam.studentId }}</td>
+        <td>{{ exam.date | date : "shortDate" }}</td>
+        <td>{{ exam.mark }}</td>
+        <td>{{ exam.class }}</td>
+        <td>{{ exam.lessonName }}</td>
+        <td>{{ exam.studentName }}</td>
+        <td>{{ exam.studentSurname }}</td>
+        <td>{{ exam.teacherSurname }}</td>
+        <td>{{ exam.teacherSurname }}</td>
+
+        <td>
+          <a href="#" class="btn btn-link">Edit</a>
+          <a href="#" class="btn btn-link">Details</a>
+          <a href="#" class="btn btn-link">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

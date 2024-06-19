@@ -1,0 +1,103 @@
+
+<div class="container">
+    <h1>{{title}}</h1>
+    <br>
+    <button routerLink="/examlist" class="btn btn-primary">Get Exam Results </button>
+
+    <br>
+    <br>
+    <h1>Exams</h1>
+    <a routerLink="/createExam" class="btn btn-primary">Create New</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Lesson Id</th>
+          <th>Student Id</th>
+          <th>Date</th>
+          <th>Mark</th>
+  
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of exams">
+          <td>{{ exam.id }}</td>
+          <td>{{ exam.lessonId }}</td>
+          <td>{{ exam.studentId }}</td>
+          <td>{{ exam.date | date: 'shortDate' }}</td>
+          <td>{{ exam.mark }}</td>
+  
+          <td>
+            <a href="#" class="btn btn-link">Edit</a>
+            <a href="#" class="btn btn-link">Details</a>
+            <a href="#" class="btn btn-link">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Students</h1>
+    <a routerLink="/createStudent" class="btn btn-primary">Create New</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Class</th>
+  
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.surname }}</td>
+          <td>{{ student.class }}</td>
+  
+          <td>
+            <a href="#" class="btn btn-link">Edit</a>
+            <a href="#" class="btn btn-link">Details</a>
+            <a href="#" class="btn btn-link">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Lessons</h1>
+    <a routerLink="/create" class="btn btn-primary">Create New</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Lesson Id</th>
+          <th>Lesson Name</th>
+          <th>Class</th>
+          <th>Teacher Name</th>
+
+          <th>Teacher Surname</th>
+  
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lesson of lessons">
+          <td>{{ lesson.lessonId }}</td>
+          <td>{{ lesson.lessonName }}</td>
+          <td>{{ lesson.class }}</td>
+          <td>{{ lesson.teacherName }}</td>
+
+          <td>{{ lesson.teacherSurname }}</td>
+  
+          <td>
+            <a href="#" class="btn btn-link">Edit</a>
+            <a href="#" class="btn btn-link">Details</a>
+            <a href="#" class="btn btn-link">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
