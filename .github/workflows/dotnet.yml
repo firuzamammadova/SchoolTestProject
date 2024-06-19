@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore SchoolProject.sln
+      run: dotnet restore SchoolProject/SchoolProject.sln
     - name: Build
-      run: dotnet build --no-restore SchoolProject.sln
+      run: dotnet build --no-restore SchoolProject/SchoolProject.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal SchoolProject.sln
+      run: dotnet test --no-build --verbosity normal SchoolProject/SchoolProject.sln
